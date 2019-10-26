@@ -6,27 +6,21 @@ int main(){
 	scanf("%d",&size);
 	int arr[size];
 	printf("Enter the elements: \n");
-
-	for(i=0;i<size;i++){
+	for(i=0;i<size;i++)
 		scanf("%d",&arr[i]);
-	}
-	
 	large=arr[0];
-	for(i=1;i<size;i++){
-		if(arr[i]>large){
-			large=arr[i];
-		}
-	}
-	
 	sec_large=arr[1];
 	for(j=0;j<size;j++){
 		if(arr[j]!=large){
-			if(arr[j]>sec_large){
-				sec_large=arr[j];
+			if(arr[j]>large){
+				sec_large=large;
+				large=arr[j];
+			}
+			else if(arr[j]>sec_large&&arr[j]!=large){
+                		sec_large=arr[j];
 			}
 		}
 	}
-	
 	printf("The second largest element is: %d\n",sec_large);
 	return 0;
 }
