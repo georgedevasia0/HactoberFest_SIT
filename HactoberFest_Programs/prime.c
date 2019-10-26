@@ -1,31 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
-	int i,num,flag=0,count=0,start,end;
+	int i,j,count=0,start,end;
 	printf("\nEnter starting number: ");
 	scanf("%d",&start);
 	printf("\nEnter ending number: ");
 	scanf("%d",&end);
-	for(num=start;num<end;num++){
-		if (num==0||num==1){
-			flag=1;
+	for(i=start;i<=end;i++){
+		if(i<2)
 			continue;
-		}
-		for(i=2;i<num/2;i++){
-			if(num%i==0){
-				flag=1;
-				break;
-			}
-		}
-		if(flag==0){
+		for(j=2;j<=(i/2);j++)
+			if(i%j==0)
+				break;	
+		if(j>(i/2))
 			count++;
-		}
-		else{
-			flag=0;
-		}
-		
 	}
 	printf("\nTotal number of primes is :%d\n",count);
-
 	return 0;
 }
