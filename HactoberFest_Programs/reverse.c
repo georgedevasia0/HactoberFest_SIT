@@ -2,32 +2,24 @@
 #include<string.h>
 
 int main(){
-	int size=0,i,flag=1;
+	int size=0,i=0,flag=1;
 	char str[50];
 	do{
-		
 	printf("\nEnter a string: ");
 	gets(str);
-	i=0;
-	while(str[i]!='\0'){
-		i++;
-	}
-	size=i-1;
-	for(i=0;i<=size/2;i++){
+	size=strlen(str)-1;
+	for(i=0;i<=size;i++){
 		if(str[i]!=str[size-i]){
 			flag=0;
 			break;
 		}
-		else{
+		else
 			flag=1;
-		}
-		printf("\n%c\t%c",str[i],str[size-i]);
+		printf("\n%c\t%c",str[i],str[i]);
 	}
-	if(flag==1){
+	if(flag==1)
 		printf("\nPalindrome");
-	}
-	else{
+	else
 		printf("\nNot Palindrome");
-	}
 	}while(str!="end");
 }	
