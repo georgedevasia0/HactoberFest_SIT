@@ -1,9 +1,9 @@
 #include<stdio.h>
 int fact(int num){
-	if(num==1)
-		return 1;
-	else
-		return num* fact(num-1);
+	int res=1;
+	for(int i=num;i>=1;i--){
+        res=res*i;
+	}
 }
 int main(){
 	int num;
